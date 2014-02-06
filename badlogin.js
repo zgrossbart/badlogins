@@ -227,7 +227,7 @@ jQuery(document).ready(function(){
      */
     x = width - (Math.floor(width / 10) * 3.5);
     var y = 340;
-    for (var i = 0; i < 22; i++) {
+    for (var i = 0; i < 28; i++) {
         x += Math.floor(Math.random() * 30);
         y -= 3;
         
