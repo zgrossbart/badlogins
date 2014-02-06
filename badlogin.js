@@ -124,26 +124,26 @@ jQuery(document).ready(function(){
      * Now a user with a bad password in Windows
      */
     for (var i = 0; i < 200; i++) {
-        z.circle(Math.max(125, Math.floor(Math.random() * width)), 60, 3, "#157d6b");
+        z.circle(Math.max(125, Math.floor(Math.random() * width)), 60, 3, "#00aeef");
     }
     
     for (var i = 0; i < 200; i++) {
-        z.circle(Math.max(125, Math.floor(Math.random() * width)), 160, 3, "#157d6b");
+        z.circle(Math.max(125, Math.floor(Math.random() * width)), 160, 3, "#00aeef");
     }
     
     for (var i = 0; i < 200; i++) {
-        z.circle(Math.max(125, Math.floor(Math.random() * width)), 460, 3, "#157d6b");
+        z.circle(Math.max(125, Math.floor(Math.random() * width)), 460, 3, "#00aeef");
     }
     
     /*
-     * Now the orange dots
+     * Now the pink dots
      */
     var x = 150;
     var y = 140;
     for (var i = 0; i < 5; i++) {
         x += Math.floor(Math.random() * 40);
         y -= 5;
-        z.circle(x, y, 3, "#ee5b32");         // orange
+        z.circle(x, y, 3, "#f69c9f");         // pink
     }
     
     /*
@@ -195,7 +195,7 @@ jQuery(document).ready(function(){
         x += Math.max(60, Math.floor(Math.random() * 80));
         y -= 5;
         
-        z.circle(x, y, 3, "#00aeef");           // blue
+        z.circle(x, y, 3, "#157d6b");           // blue
     }
     
     /*
@@ -251,6 +251,6 @@ jQuery(document).ready(function(){
     for (var i = 0; i < 3; i++) {
         x += Math.max(40, Math.floor(Math.random() * 80));
         y -= 5;
-        z.circle(x, y, 3, "#F00FF0");           // pink
+        z.circle(x, y, 3, "#F00FF0");           // purple
     }
 });

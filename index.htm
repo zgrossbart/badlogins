@@ -2,20 +2,37 @@
 <html lang="en"> 
     <head> 
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
-        <title>Bad Logins</title> 
+        <title>Making Data Tell A Story - Bad Logins</title> 
         <link rel="stylesheet" href="badlogin.css" type="text/css" media="screen"> 
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
         <script src="raphael-min.js" type="text/javascript" charset="utf-8"></script> 
         <script src="badlogin.js" type="text/javascript" charset="utf-8"></script> 
+        
+        <script type="text/javascript">
+                    var _gaq = _gaq || [];
+                    _gaq.push(['_setAccount', 'UA-26336682-1']);
+                    _gaq.push(['_trackPageview']);
+            
+                    (function() {
+                        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                    })();
+                </script>
     </head> 
     <body> 
         
+        <a href="http://github.com/zgrossbart/badlogins" id="forkme"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+        
         <h1>Making Data Tell A Story - Bad Logins</h1>
         
-        <p>Here is some text</p>
-        <p>Here is some text</p>
-        <p>Here is some text</p>
-        <p>Here is some text</p>
+        <p>Am I getting hacked right now?</p>
+        
+        <p>System administrators spend most of their day asking that question and the tools they get to answer it are long log files showing unassociated events and people complaining when something breaks.  Instead of looking at logs we want to make that data tell a story.</p>
+        
+        <p>This graphic tells the story of bad logins over half an hour in a large company.  Hackers often start by making failed logins, but it's tough to tell the bad guys from the good guys who just make typos.  You can't set a warning for every time someone mistypes their password.</p>
+        
+        <p>Instead of getting warned when the number of bad logins goes over an arbitrary number this graphic uses that data to tell a story and help you find the need in the hay stack.</p>
         
     
         <div id="maintitle">
@@ -77,24 +94,21 @@
             <div id="popup"></div>
         </div>
         
-        <div id="expl">
-            <h2>Bad Logins Alert</h2>
-            <p>
-                This prototype plots 782 distinct points of information over seven axis of data and makes it easy to see bad logins in a small time window.  The small time window makes it possible to filter out uninteresting systems.
-            </p>
-            
-            <p>
-                The baseline of successful logins are shown in gray and unsuccessful logins are shown in other colors.  Each IP address is shown in its own color.  As the same user name is tried multiple times the dots indicating the request move higher.  This makes it easy and fast to differentiate hackers from valid users with invalid passwords and plot the trend to find security issues and system outages.
-            </p>
-            
-            <p>
-                You can drill deeper into the data by moving your mouse over each dot.
-            </p>
-            
-            <p>
-                This chart plots:
-            </p>
-            
+        <h2>Telling the story</h2>
+        
+        <p>This graphic starts with a baseline of all the successful logins in the time period shown in gray <span class="circle" style="background: darkgray;"></span>.  When there's a bad login we assign the computer it came from a color.  When that computer uses the same username over and over we move the dots up. Move your mouse over each dot to see some more information. </p>
+        <p>Mr. Pink <span class="circle" style="background: #f69c9f;"></span> in the first swimlane looks pretty safe.  He tried the same user a few times and then finally got the right password.  Mr. Pink just has fat fingers.  Same with Mr. Green <span class="circle" style="background: #52b755;"></span> or Mr. Beige <span class="circle" style="background: #e0cb61"></span>.</p>
+        
+        <p>Ms. Blue <span class="circle" style="background: #00aeef;"></span> looks like a computer.  She's trying the same username over and over again in three different systems at the same time.  She's also going faster than anyone could type.  Ms. Blue may be a computer, but she doesn't look dangerous.  Many people configure Windows to automatically login for them and it looks like Ms. Blue just has her computer configured with the wrong password.</p>
+        
+        <p>Mr. Red <span class="circle" style="background: #ee2a33;"></span> is another story.  Mr. Red is many different usernames in a short time.  When he finds a username he likes he keeps trying it with different passwords.  Mr. Red is a bad man.  Not only does he look like a hacker, but it looks like he found a bug in the system.  It shouldn't be possible to tell if a username is value, but Mr. Red found a way.</p>
+        
+        <h2>The gritty details</h2>
+        
+        <p>This graphic shows you 782 distinct points of data over seven data dimensions.  Showing that many log events in a long list is overwhelming, but breaking it up and giving the data meaning makes it possible to know at a glance if your company is getting hacked.</p>
+        
+        <p>
+            This chart plots:        
             <ol>
                 <li>Successful logins</li>
                 <li>Unsuccessful logins</li>
@@ -102,13 +116,11 @@
                 <li>IP address</li>
                 <li>Username</li>
                 <li>Username repititions</li>
-                <li>System access</li>
+                <li>The system being accessed</li>
             </ol>
-
-        </div>
+        </p>
         
-        
- 
+        <p>Created by <a href="http://www.zackgrossbart.com/">Zack Grossbart</a></p>
     </body> 
 </html> 
  
