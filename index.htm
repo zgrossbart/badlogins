@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"> 
+<html lang="en"> 
+    <head> 
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+        <title>Bad Logins</title> 
+        <link rel="stylesheet" href="badlogin.css" type="text/css" media="screen"> 
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+        <script src="raphael-min.js" type="text/javascript" charset="utf-8"></script> 
+        <script src="badlogin.js" type="text/javascript" charset="utf-8"></script> 
+    </head> 
+    <body> 
+    
+        <div id="maintitle">
+            <h3>53 Successful Logins</h3>
+            <h3 class="red">1,659 Failed Logins</h3>
+        </div>
+        <div class="container" id="data">
+            <div id="hr" class="title">
+                <h4>HR Database</h4>
+            </div>
+            <div id="sap" class="title">
+                <h4>SAP Payroll System</h4>
+            </div>
+            <div id="idm" class="title">
+                <h4>Identity System</h4>
+            </div>
+            
+            <div id="date" class="weak">
+                01-SEP-2010
+            </div>
+            
+            <div id="time1" class="weak">
+                11:00 AM
+            </div>
+            
+            <div id="time2" class="weak">
+                11:30 AM
+            </div>
+            
+            
+            
+            <div id="popup"></div>
+        </div>
+        <div class="container" id="holder"></div> 
+        
+        <div id="expl">
+            <h2>Bad Logins Alert</h2>
+            <p>
+                This prototype plots 216 distinct points of information over seven axis of data and makes it easy to see bad logins in a small time window.  The small time window makes it possible to filter out uninteresting systems.
+            </p>
+            
+            <p>
+                The baseline of successful logins are shown in gray and unsuccessful logins are shown in other colors.  Each IP address is shown in its own color.  As the same user name is tried multiple times the dots indicating the request move higher.  This makes it easy and fast to differentiate hackers from valid users with invalid passwords and plot the trend to find security issues and system outages.
+            </p>
+            
+            <p>
+                You can drill deeper into the data by moving your mouse over each dot.
+            </p>
+            
+            <p>
+                This chart plots:
+            </p>
+            
+            <ol>
+                <li>Successful logins</li>
+                <li>Unsuccessful logins</li>
+                <li>Time</li>
+                <li>IP address</li>
+                <li>Username</li>
+                <li>Username repititions</li>
+                <li>System access</li>
+            </ol>
+
+        </div>
+        
+        
+ 
+    </body> 
+</html> 
+ 
