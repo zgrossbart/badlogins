@@ -42,27 +42,27 @@ p, ol {
 
 #hr {
     top: 100px;
-    left: 15px;
+    left: -5px;
 }
 
 #sap {
     top: 200px;
-    left: 15px;
+    left: -5px;
 }
 
 #idm {
     top: 300px;
-    left: 15px;
+    left: -5px;
 }
 
 #payroll {
     top: 400px;
-    left: 15px;
+    left: -5px;
 }
 
 #peoplesoft {
     top: 500px;
-    left: 15px;
+    left: -5px;
 }
 
 #swimlanes {
@@ -70,7 +70,7 @@ p, ol {
 }
 
 .title {
-    width: 75px;
+    width: 95px;
     position: absolute;
     text-align: right;
 }
