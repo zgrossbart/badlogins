@@ -28,12 +28,9 @@
         
         <p>Am I getting hacked right now?</p>
         
-        <p>System administrators spend most of their day asking that question and the tools they get to answer it are long log files showing unassociated events and people complaining when something breaks.  Instead of looking at logs we want to make that data tell a story.</p>
+        <p>System administrators spend most of their day asking that question and the tools they get to answer it are long log files with unassociated events and people complaining when something breaks.  Instead of looking at logs let's make that data tell a story.</p>
         
-        <p>This graphic tells the story of bad logins over half an hour in a large company.  Hackers often start by making failed logins, but it's tough to tell the bad guys from the good guys who just make typos.  You can't set a warning for every time someone mistypes their password.</p>
-        
-        <p>Instead of getting warned when the number of bad logins goes over an arbitrary number this graphic uses that data to tell a story and help you find the need in the hay stack.</p>
-        
+        <p>This graphic tells the story of bad logins over half an hour in a large company.  Hackers often start by making failed logins, but it's tough to tell the good guys making typos from the real bad guys.  You can't set a warning for every time someone mistypes their password.</p>        
     
         <div id="maintitle">
             <h3>73 Successful Logins</h3>
@@ -97,11 +94,12 @@
         <h2>Telling the story</h2>
         
         <p>This graphic starts with a baseline of all the successful logins in the time period shown in gray <span class="circle" style="background: darkgray;"></span>.  When there's a bad login we assign the computer it came from a color.  When that computer uses the same username over and over we move the dots up. Move your mouse over each dot to see some more information. </p>
-        <p>Mr. Pink <span class="circle" style="background: #f69c9f;"></span> in the first swimlane looks pretty safe.  He tried the same user a few times and then finally got the right password.  Mr. Pink just has fat fingers.  Same with Mr. Green <span class="circle" style="background: #52b755;"></span> or Mr. Beige <span class="circle" style="background: #e0cb61"></span>.</p>
         
-        <p>Ms. Blue <span class="circle" style="background: #00aeef;"></span> looks like a computer.  She's trying the same username over and over again in three different systems at the same time.  She's also going faster than anyone could type.  Ms. Blue may be a computer, but she doesn't look dangerous.  Many people configure Windows to automatically login for them and it looks like Ms. Blue just has her computer configured with the wrong password.</p>
+        <p>Mr. Pink <span class="circle" style="background: #f69c9f;"></span> in the HR Database looks pretty safe.  He tried the same user a few times and then finally got the right password.  Mr. Pink just has fat fingers.  Same with Mr. Green <span class="circle" style="background: #52b755;"></span> or Mr. Beige <span class="circle" style="background: #e0cb61"></span> in the SAP Payroll System.</p>
         
-        <p>Mr. Red <span class="circle" style="background: #ee2a33;"></span> is another story.  Mr. Red is many different usernames in a short time.  When he finds a username he likes he keeps trying it with different passwords.  Mr. Red is a bad man.  Not only does he look like a hacker, but it looks like he found a bug in the system.  It shouldn't be possible to tell if a username is value, but Mr. Red found a way.</p>
+        <p>Ms. Blue <span class="circle" style="background: #00aeef;"></span> looks like a computer.  She's trying the same username over and over again in three different systems at the same time.  She's also going faster than anyone could type.  Ms. Blue may be a computer, but she doesn't look dangerous.  Many people configure Windows to automatically login for them and it looks like Ms. Blue just has her computer set with the wrong password.</p>
+        
+        <p>Mr. Red <span class="circle" style="background: #ee2a33;"></span> is different story.  Mr. Red uses many different usernames in a short time.  When he finds a username he likes he keeps trying it with different passwords.  Mr. Red is a bad man.  Not only does he look like a hacker, but it looks like he found a bug in the system.  It shouldn't be possible to tell if a username is valid, but Mr. Red found a way.</p>
         
         <h2>The gritty details</h2>
         
@@ -119,6 +117,8 @@
                 <li>The system being accessed</li>
             </ol>
         </p>
+        
+        <p>This graphic was created using HTML, CSS, <a href="http://raphaeljs.com/">Rapha&euml;l</a>, and a little <a href="http://jquery.com/">jQuery</a>.
         
         <p>Created by <a href="http://www.zackgrossbart.com/">Zack Grossbart</a></p>
     </body> 
