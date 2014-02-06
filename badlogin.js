@@ -124,15 +124,15 @@ jQuery(document).ready(function(){
      * Now a user with a bad password in Windows
      */
     for (var i = 0; i < 200; i++) {
-        z.circle(Math.max(125, Math.floor(Math.random() * width)), 60, 3, "#00aeef");
+        z.circle(Math.max(125, Math.floor(Math.random() * width)), 60, 3, "#fec01e");
     }
     
     for (var i = 0; i < 200; i++) {
-        z.circle(Math.max(125, Math.floor(Math.random() * width)), 160, 3, "#00aeef");
+        z.circle(Math.max(125, Math.floor(Math.random() * width)), 160, 3, "#fec01e");
     }
     
     for (var i = 0; i < 200; i++) {
-        z.circle(Math.max(125, Math.floor(Math.random() * width)), 460, 3, "#00aeef");
+        z.circle(Math.max(125, Math.floor(Math.random() * width)), 460, 3, "#fec01e");
     }
     
     /*
@@ -152,11 +152,11 @@ jQuery(document).ready(function(){
     x = Math.floor(width / 3);
     for (var i = 0; i < 3; i++) {
         x += Math.floor(Math.random() * 15);
-        z.circle(x, 140, 3, "#fec01e");         // yellow
+        z.circle(x, 140, 3, "#00aeef");         // yellow
     }
     
     x += Math.floor(width / 10);
-    z.circle(x, 130, 3, "#fec01e");             // yellow
+    z.circle(x, 130, 3, "#00aeef");             // yellow
     
     
     /*
@@ -213,7 +213,19 @@ jQuery(document).ready(function(){
     /*
      * Now the second curve
      */
-    x = width - (Math.floor(width / 10) * 4.5);
+    x = width - (Math.floor(width / 10) * 5.5);
+    var y = 340;
+    for (var i = 0; i < 22; i++) {
+        x += Math.floor(Math.random() * 30);
+        y -= 3;
+        
+        z.circle(x, y, 3, "#ee2a33");          // red
+    }
+    
+    /*
+     * Now the third curve
+     */
+    x = width - (Math.floor(width / 10) * 3.5);
     var y = 340;
     for (var i = 0; i < 22; i++) {
         x += Math.floor(Math.random() * 30);
