@@ -27,14 +27,51 @@ z = {
     },
     
     circle: function(x, y, radius, color) {
+         var inCircle = true;
          return z.r.circle(x, y, radius).attr({fill: color, "stroke-width": 0})
             .mouseover(function (event) {
-                this.animate({r: 8}, 200, function() {
-                    z.showPopup(this.getBBox().x, this.getBBox().y, "IDM<br />164.99.212.125<br />admin<br />11:15 AM, September 1, 2010");
-                });
+                inCircle = true;
+                this.animate({r: 8}, 100);
+                var boxX = this.getBBox().x - 50;
+                var boxY = this.getBBox().y;
+                
+                setTimeout(function() {
+                    if (inCircle) {
+                        var title = '';
+                        if (y < 150) {
+                            title = 'HR Database';
+                        } else if (y < 250) {
+                            title = 'SAP Payroll System';
+                        } else if (y < 250) {
+                            title = 'Identity System';
+                        } else if (y < 450) {
+                            title = 'Payroll Processing';
+                        } else if (y < 550) {
+                            title = 'PeopleSoft';
+                        }
+                        z.output('boxX: ' + boxX);
+                        var paperWidth = $('div.container').width();
+                        z.output('paperWidth: ' + paperWidth);
+                        
+                        if (boxX + 210 > paperWidth - 25) {
+                            boxX = paperWidth - 235;
+                        }
+                        
+                        if (color === 'darkgray') {
+                            z.showPopup(boxX, boxY, '<h4>' + title + '</h4>' + 
+                                'admin logged into ' + title + ' from 24.61.131.44 on 11:15 AM, February 1');
+                        } else {
+                            z.showPopup(boxX, boxY, '<h4>' + title + '</h4>' + 
+                                'Someone from 24.61.131.44 tried to log in as admin on 11:15 AM, February 1');
+                        }
+                    }
+                }, 250);
             }).mouseout(function (event) {
+                if (inCircle) {
+                    z.hidePopup();
+                }
+                inCircle = false;
                 this.animate({r: 3}, 200);
-                z.hidePopup();
             }).click(function (event) {
                 z.output("click...");
             });
@@ -56,7 +93,7 @@ jQuery(document).ready(function(){
     
     var width = $('#holder').width() - 50;
     
-    for (var y = 50; y < 400; y += 100) {
+    for (var y = 50; y < 600; y += 100) {
         z.drawHLine(100, y, width);
     }
     
@@ -75,54 +112,63 @@ jQuery(document).ready(function(){
         z.circle(Math.max(125, Math.floor(Math.random() * width)), 340, 3, "darkgray");
     }
     
+    for (var i = 0; i < 6; i++) {
+        z.circle(Math.max(125, Math.floor(Math.random() * width)), 440, 3, "darkgray");
+    }
+    
+    for (var i = 0; i < 14; i++) {
+        z.circle(Math.max(125, Math.floor(Math.random() * width)), 540, 3, "darkgray");
+    }
+    
     /*
      * Now a user with a bad password in Windows
      */
-    for (var i = 0; i < 500; i++) {
-        z.circle(Math.max(125, Math.floor(Math.random() * width)), 60, 3, "#CC6633");
+    for (var i = 0; i < 200; i++) {
+        z.circle(Math.max(125, Math.floor(Math.random() * width)), 60, 3, "#157d6b");
     }
     
-    for (var i = 0; i < 500; i++) {
-        z.circle(Math.max(125, Math.floor(Math.random() * width)), 160, 3, "#CC6633");
+    for (var i = 0; i < 200; i++) {
+        z.circle(Math.max(125, Math.floor(Math.random() * width)), 160, 3, "#157d6b");
     }
     
-    for (var i = 0; i < 500; i++) {
-        z.circle(Math.max(125, Math.floor(Math.random() * width)), 260, 3, "#CC6633");
+    for (var i = 0; i < 200; i++) {
+        z.circle(Math.max(125, Math.floor(Math.random() * width)), 460, 3, "#157d6b");
     }
-    
     
     /*
      * Now the orange dots
      */
     var x = 150;
+    var y = 140;
     for (var i = 0; i < 5; i++) {
-        x += Math.floor(Math.random() * 15);
-        z.circle(x, 140, 3, "orange");
+        x += Math.floor(Math.random() * 40);
+        y -= 5;
+        z.circle(x, y, 3, "#ee5b32");         // orange
     }
     
     /*
-     * Now the cyan dots
+     * Now the yellow dots
      */
-    x = Math.floor(width / 2);
+    x = Math.floor(width / 3);
     for (var i = 0; i < 3; i++) {
         x += Math.floor(Math.random() * 15);
-        z.circle(x, 140, 3, "cyan");
+        z.circle(x, 140, 3, "#fec01e");         // yellow
     }
     
     x += Math.floor(width / 10);
-    z.circle(x, 130, 3, "cyan");
+    z.circle(x, 130, 3, "#fec01e");             // yellow
     
     
     /*
      * Now the green dots
      */
     x = width - (Math.floor(width / 10) * 4);
-    var y = 140;
-    for (var i = 0; i < 15; i++) {
-        x += Math.floor(Math.random() * 30);
+    y = 140;
+    for (var i = 0; i < 10; i++) {
+        x += Math.floor(Math.random() * 45);
         y -= 5;
         
-        z.circle(x, y, 3, "green");
+        z.circle(x, y, 3, "#52b755");           // green
     }
     
     /*
@@ -134,11 +180,11 @@ jQuery(document).ready(function(){
         x += Math.max(10, Math.floor(Math.random() * 20));
         y -= 5;
         
-        z.circle(x, y, 3, "gold");
+        z.circle(x, y, 3, "#e0cb61");           // beige
     }
     
     x += Math.max(60, Math.floor(Math.random() * 80));
-    z.circle(x, y - 5, 3, "gold");
+    z.circle(x, y - 5, 3, "#e0cb61");           // beige
     
     /*
      * Now the blue dots
@@ -149,17 +195,7 @@ jQuery(document).ready(function(){
         x += Math.max(60, Math.floor(Math.random() * 80));
         y -= 5;
         
-        z.circle(x, y, 3, "blue");
-    }
-    
-    /*
-     * Now the purple dots
-     */
-    x = width - (Math.floor(width / 10) * 3);
-    y = 340;
-    for (var i = 0; i < 3; i++) {
-        x += Math.max(20, Math.floor(Math.random() * 30));
-        z.circle(x, y, 3, "purple");
+        z.circle(x, y, 3, "#00aeef");           // blue
     }
     
     /*
@@ -171,7 +207,7 @@ jQuery(document).ready(function(){
         x += Math.floor(Math.random() * 30);
         y -= 3;
         
-        z.circle(x, y, 3, "red");
+        z.circle(x, y, 3, "#ee2a33");           // red
     }
     
     /*
@@ -183,7 +219,7 @@ jQuery(document).ready(function(){
         x += Math.floor(Math.random() * 30);
         y -= 3;
         
-        z.circle(x, y, 3, "red");
+        z.circle(x, y, 3, "#ee2a33");          // red
     }
     
     /*
@@ -193,6 +229,28 @@ jQuery(document).ready(function(){
     var y = 340;
     for (var i = 0; i < 21; i++) {
         x += Math.max(30, Math.floor(Math.random() * 50));
-        z.circle(x, y, 3, "red");
+        z.circle(x, y, 3, "#ee2a33");           // red
+    }
+    
+    /*
+     * Now the pink dots
+     */
+    x = width - (Math.floor(width / 10) * 3);
+    y = 440;
+    for (var i = 0; i < 3; i++) {
+        x += Math.max(20, Math.floor(Math.random() * 30));
+        y -= 5;
+        z.circle(x, y, 3, "#f69c9f");           // pink
+    }
+    
+    /*
+     * Now the dark green dots
+     */
+    x = width - (Math.floor(width / 10) * 7);
+    y = 440;
+    for (var i = 0; i < 3; i++) {
+        x += Math.max(40, Math.floor(Math.random() * 80));
+        y -= 5;
+        z.circle(x, y, 3, "#F00FF0");           // pink
     }
 });
