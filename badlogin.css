@@ -129,6 +129,7 @@ p, ol {
     position: relative;
     top: 15px;
     left: 75%;
+    width: 25%;
 }
 
 .red {
