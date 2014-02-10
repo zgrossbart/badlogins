@@ -143,7 +143,12 @@ jQuery(document).ready(function(){
     for (var i = 0; i < 5; i++) {
         x += Math.floor(Math.random() * 40);
         y -= 5;
-        z.circle(x, y, 3, "#f69c9f");         // pink
+        
+        if (i == 4) {
+            z.circle(x, y, 3, "darkgray");
+        } else {
+            z.circle(x, y, 3, "#f69c9f");         // pink
+        }
     }
     
     /*
@@ -168,7 +173,11 @@ jQuery(document).ready(function(){
         x += Math.floor(Math.random() * 45);
         y -= 5;
         
-        z.circle(x, y, 3, "#52b755");           // green
+        if (i == 9) {
+            z.circle(x, y, 3, "darkgray");
+        } else {
+            z.circle(x, y, 3, "#52b755");           // green
+        }
     }
     
     /*
@@ -184,7 +193,7 @@ jQuery(document).ready(function(){
     }
     
     x += Math.max(60, Math.floor(Math.random() * 80));
-    z.circle(x, y - 5, 3, "#e0cb61");           // beige
+    z.circle(x, y - 5, 3, "darkgray");           // beige
     
     /*
      * Now the blue dots
@@ -195,7 +204,11 @@ jQuery(document).ready(function(){
         x += Math.max(60, Math.floor(Math.random() * 80));
         y -= 5;
         
-        z.circle(x, y, 3, "#157d6b");           // blue
+        if (i == 4) {
+            z.circle(x, y, 3, "darkgray");
+        } else {
+            z.circle(x, y, 3, "#157d6b");           // blue
+        }
     }
     
     /*
@@ -219,7 +232,11 @@ jQuery(document).ready(function(){
         x += Math.floor(Math.random() * 30);
         y -= 3;
         
-        z.circle(x, y, 3, "#ee2a33");          // red
+        if (i == 21) {
+            z.circle(x, y, 3, "darkgray");
+        } else {
+            z.circle(x, y, 3, "#ee2a33");          // red
+        }
     }
     
     /*
@@ -231,7 +248,11 @@ jQuery(document).ready(function(){
         x += Math.floor(Math.random() * 30);
         y -= 3;
         
-        z.circle(x, y, 3, "#ee2a33");          // red
+        if (i == 27) {
+            z.circle(x, y, 3, "darkgray");
+        } else {
+            z.circle(x, y, 3, "#ee2a33");          // red
+        }
     }
     
     /*
@@ -241,7 +262,7 @@ jQuery(document).ready(function(){
     var y = 340;
     for (var i = 0; i < 21; i++) {
         x += Math.max(30, Math.floor(Math.random() * 50));
-        z.circle(x, y, 3, "#ee2a33");           // red
+        z.circle(x, y, 3, "#ee2a33");           // red    
     }
     
     /*
